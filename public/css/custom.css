@@ -27,3 +27,8 @@ th {
 td {
 	color: white;
 }
+
+.card {
+	background-color: #2a2a2a;
+	border: 1px solid cyan;
+}

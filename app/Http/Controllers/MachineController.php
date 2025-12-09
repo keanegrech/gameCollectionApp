@@ -11,4 +11,9 @@ class MachineController extends Controller
         $machines = Machine::all();
         return view('machines.index', compact('machines'));
     }
+
+    function show($id) {
+        $machine = Machine::find($id);
+        return view('machines.show', compact('machine'));
+    }
 }

@@ -19,3 +19,4 @@ Route::get('/', function () {
 });
 
 Route::get('/machines', [MachineController::class, 'index'])->name('machines.index');
+Route::get('/machines/{id}', [MachineController::class, 'show'])->name('machines.show');

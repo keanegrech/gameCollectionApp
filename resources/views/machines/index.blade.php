@@ -27,7 +27,7 @@
                     <td>{{ $machine->name }}</td>
                     <td>{{ $machine->manufacturer }}</td>
                     <td style="white-space: nowrap;">
-                        <a href="#" class="btn btn-sm btn-primary">
+                        <a href={{ route('machines.show', $machine->id) }} class="btn btn-sm btn-primary">
                             <i class="fa fa-eye"></i> View
                         </a>
                         <a href="#" class="btn btn-sm btn-secondary">
