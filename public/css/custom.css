@@ -1,0 +1,17 @@
+body {
+	background-color: #1a1a1a;
+	color: white;
+}
+
+nav {
+	background-color: #333333;
+	border-bottom: 1px solid cyan;
+}
+
+.navbar-brand {
+	color: cyan;
+}
+
+.nav-link {
+	color: white;
+}
