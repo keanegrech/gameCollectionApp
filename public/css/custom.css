@@ -15,3 +15,15 @@ nav {
 .nav-link {
 	color: white;
 }
+
+table {
+	border: 1px solid cyan;
+}
+
+th {
+	color: white;
+}
+
+td {
+	color: white;
+}
