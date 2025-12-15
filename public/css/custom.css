@@ -31,4 +31,17 @@ td {
 .card {
 	background-color: #2a2a2a;
 	border: 1px solid cyan;
+	box-shadow: 0 0 5px cyan;
+}
+
+.form-control {
+	background-color: #333333;
+	color: white;
+}
+
+.form-control:focus {
+	background-color: #333333;
+	color: white;
+	border-color: cyan;
+	box-shadow: 0 0 5px cyan;
 }

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer('percent_complete');
             $table->date('release_date')->nullable();
             $table->foreignId('machine_id')->constrained()->onDelete('cascade');
+            $table->timestamps();
         });
     }
 

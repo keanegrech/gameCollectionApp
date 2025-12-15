@@ -19,4 +19,6 @@ Route::get('/', function () {
 });
 
 Route::get('/machines', [MachineController::class, 'index'])->name('machines.index');
+Route::get('/machines/create', [MachineController::class, 'create'])->name('machines.create');
 Route::get('/machines/{id}', [MachineController::class, 'show'])->name('machines.show');
+Route::post('/machines', [MachineController::class, 'store'])->name('machines.store');

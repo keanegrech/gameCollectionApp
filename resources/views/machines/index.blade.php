@@ -5,7 +5,7 @@
 <div class="container-fluid p-3">
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h1 class="m-0">Machines</h1>
-        <a href="#" class="btn btn-success">
+        <a href="{{ route('machines.create') }}" class="btn btn-success">
             <i class="fa fa-plus"></i> Add New Machine
         </a>
     </div>

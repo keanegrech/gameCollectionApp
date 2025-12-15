@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('alt_text')->nullable();
             $table->binary('image_data');
             $table->foreignId('game_id')->constrained()->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
