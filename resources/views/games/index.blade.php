@@ -17,10 +17,35 @@
         </div>
         @endif
 
-        <pre style="color: white">
-            {{ $games }}
-        </pre>
+        <div class="d-flex flex-wrap gap-3">
+            @foreach ($games as $game)
+            <div class="card m-3" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        {{ $game->title }}
+                    </h5>
 
+                    <p class="card-text">
+                        {{ $game->description }}
+                    </p>
+
+                    <hr />
+
+                    <p class="card-text">
+                        <strong>Developer:</strong> {{ $game->developer }}
+                    </p>
+
+                    <p class="card-text">
+                        <strong>Percent Complete:</strong> {{ $game->percent_complete }}%
+                    </p>
+
+                    <a href={{ route('games.show', $game->id) }} class="btn btn-primary">
+                        View Details
+                    </a>
+                </div>
+            </div>
+            @endforeach
+        </div>
     </div>
 </div>
 @endsection

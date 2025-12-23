@@ -37,6 +37,7 @@ Route::delete('/machines/{id}', [MachineController::class, 'destroy'])->name('ma
 // View routes
 Route::get('/games', [GameController::class, 'index'])->name('games.index');
 Route::get('/games/create', [GameController::class, 'create'])->name('games.create');
+Route::get('/games/{id}', [GameController::class, 'show'])->name('games.show');
 
 // State changing routes
 Route::post('/games', [GameController::class, 'store'])->name('games.store');

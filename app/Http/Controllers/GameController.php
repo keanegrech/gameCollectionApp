@@ -13,6 +13,11 @@ class GameController extends Controller
         return view('games.index', compact('games'));
     }
 
+    function show($id) {
+        $game = Game::find($id);
+        return view('games.show', compact('game'));
+    }
+
     function create() {
         $game = new Game();
         $machines = Machine::orderBy('name')->pluck('name', 'id');
