@@ -11,6 +11,13 @@
     </div>
 
     <div class="table-responsive">
+
+        @if ($message = session('success'))
+        <div class="alert alert-success">
+            {{ $message }}
+        </div>
+        @endif
+
         <table class="table table-striped table-hover table-bordered align-middle">
             <thead class="table-dark">
                 <tr>
@@ -30,7 +37,7 @@
                         <a href={{ route('machines.show', $machine->id) }} class="btn btn-sm btn-primary">
                             <i class="fa fa-eye"></i> View
                         </a>
-                        <a href="#" class="btn btn-sm btn-secondary">
+                        <a href="{{ route('machines.edit', $machine->id) }}" class="btn btn-sm btn-secondary">
                             <i class="fa fa-edit"></i> Edit
                         </a>
                         <a href="#" class="btn btn-sm btn-danger">

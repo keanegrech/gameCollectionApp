@@ -9,13 +9,14 @@
         </a>
     </div>
 
-    <h1 class="mb-4 text-center">Add New Machine</h1>
+    <h1 class="mb-4 text-center">Edit Machine</h1>
 
     <div class="d-flex justify-content-center">
         <div class="card" style="min-width: 400px;">
             <div class="card-body">
-                <form method="POST" action="{{ route('machines.store') }}">
+                <form method="POST" action="{{ route('machines.update', $machine->id) }}">
                     @csrf
+                    @method('PUT')
                     @include('machines._form')
                 </form>
             </div>
