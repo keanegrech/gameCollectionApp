@@ -18,9 +18,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/* -- Machine Routes -- */
+
+// View routes
 Route::get('/machines', [MachineController::class, 'index'])->name('machines.index');
 Route::get('/machines/create', [MachineController::class, 'create'])->name('machines.create');
 Route::get('/machines/{id}', [MachineController::class, 'show'])->name('machines.show');
-Route::post('/machines', [MachineController::class, 'store'])->name('machines.store');
 Route::get('/machines/{id}/edit', [MachineController::class, 'edit'])->name('machines.edit');
+
+// State changing routes
+Route::post('/machines', [MachineController::class, 'store'])->name('machines.store');
 Route::put('/machines/{id}', [MachineController::class, 'update'])->name('machines.update');
+Route::delete('/machines/{id}', [MachineController::class, 'destroy'])->name('machines.destroy');
+
+/* -- Game routes -- */
+
+// View routes
+
+// State changing routes

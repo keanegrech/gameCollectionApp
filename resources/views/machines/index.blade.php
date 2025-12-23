@@ -40,7 +40,7 @@
                         <a href="{{ route('machines.edit', $machine->id) }}" class="btn btn-sm btn-secondary">
                             <i class="fa fa-edit"></i> Edit
                         </a>
-                        <a href="#" class="btn btn-sm btn-danger">
+                        <a href={{ route('machines.destroy', $machine->id) }} class="btn-delete btn btn-sm btn-danger">
                             <i class="fa fa-times"></i> Delete
                         </a>
                     </td>
@@ -48,6 +48,9 @@
                 @endforeach
             </tbody>
         </table>
+
+        @include('machines._delete')
+
     </div>
 </div>
 

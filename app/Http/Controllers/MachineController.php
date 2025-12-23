@@ -13,7 +13,8 @@ class MachineController extends Controller
     }
 
     function create() {
-        return view('machines.create');
+        $machine = new Machine();
+        return view('machines.create', compact('machine'));
     }
 
     function show($id) {
@@ -45,5 +46,11 @@ class MachineController extends Controller
         $machine = Machine::find($id);
         $machine->update($request->all());
         return redirect()->route('machines.index')->with('success', 'Machine updated successfully.');
+    }
+
+    function destroy($id) {
+        $machine = Machine::find($id);
+        $machine->delete();
+        return redirect()->route('machines.index')->with('success', 'Machine deleted successfully.');
     }
 }

@@ -22,10 +22,13 @@
         <a href={{ route('machines.edit', $machine->id) }} class="btn btn-primary">
             <i class="fa fa-edit"></i> Edit Machine
         </a>
-        <a href="#" class="btn btn-danger ms-2">
+        <a href="{{ route('machines.destroy', $machine->id) }}" class="btn btn-danger ms-2 btn-delete">
             <i class="fa fa-times"></i> Delete Machine
         </a>
     </div>
+
+    @include('machines._delete')
+
 </div>
 
 @endsection
