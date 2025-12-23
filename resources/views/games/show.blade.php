@@ -61,11 +61,35 @@
         </div>
     </div>
 
+    <h2 class="mt-5 mb-3">Screenshots</h2>
+    <form action="{{ route('screenshots.store', $game->id) }}" method="POST" enctype="multipart/form-data">
+        @csrf
+        <input type="file" name="screenshots[]" multiple class="form-control mb-3" />
+        <input type="submit" value="Upload Screenshots" class="btn btn-primary mb-3" />
+    </form>
+
+    <div class="mx-auto" style="max-width: 600px;">
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                @foreach ($screenshots as $screnshot)
+                <div class="carousel-item @if ($loop->first) active @endif">
+                    <img src="{{ $screnshot->getBase64ImageAttribute() }}" class="d-block w-100" alt="{{ $screnshot->alt_text }}">
+                </div>
+                @endforeach
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
 
     <h2 class="mt-5 mb-3">Latest News from Steam</h2>
     <div class="d-flex flex-wrap gap-3">
-
-
         @foreach ($newsItems as $newsItem)
 
         <div class="card mr-3" style="flex: 1 1 300px;">

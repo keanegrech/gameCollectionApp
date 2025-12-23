@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MachineController;
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\ScreenshotController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,3 +45,8 @@ Route::get('/games/{id}/edit', [GameController::class, 'edit'])->name('games.edi
 Route::post('/games', [GameController::class, 'store'])->name('games.store');
 Route::put('/games/{id}', [GameController::class, 'update'])->name('games.update');
 Route::delete('/games/{id}', [GameController::class, 'destroy'])->name('games.destroy');
+
+/* -- Screenshot routes -- */
+
+// State changing routes
+Route::post('/screenshots/{id}', [ScreenshotController::class, 'store'])->name('screenshots.store');

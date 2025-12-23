@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('screenshots', function (Blueprint $table) {
             $table->id();
             $table->string('alt_text')->nullable();
-            $table->binary('image_data');
+            $table->mediumText('image_data')->charset('binary');
             $table->foreignId('game_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });

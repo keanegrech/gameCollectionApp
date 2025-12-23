@@ -19,6 +19,11 @@ class Screenshot extends Model
         return $this->belongsTo(Game::class);
     }
 
+    public function getBase64ImageAttribute()
+    {
+        return 'data:image/png;base64,' . $this->image_data;
+    }
+
     protected $fillable = [
         'alt_text',
         'image_data',
