@@ -15,7 +15,7 @@
 <body>
     <nav data-bs-theme="dark" class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{ route('machines.index') }}">
                 <strong>
                     Game Collection
                 </strong>
@@ -27,10 +27,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Machines</a>
+                        <a class="nav-link" href="{{ route('machines.index') }}">Machines</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Games</a>
+                        <a class="nav-link" href="{{ route('games.index') }}">Games</a>
                     </li>
                 </ul>
             </div>

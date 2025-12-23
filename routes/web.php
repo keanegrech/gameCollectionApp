@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MachineController;
+use App\Http\Controllers\GameController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,5 +35,6 @@ Route::delete('/machines/{id}', [MachineController::class, 'destroy'])->name('ma
 /* -- Game routes -- */
 
 // View routes
+Route::get('/games', [GameController::class, 'index'])->name('games.index');
 
 // State changing routes
