@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Game;
 use App\Models\Machine;
+use Illuminate\Support\Facades\Http;
 
 class GameController extends Controller
 {
@@ -15,7 +16,11 @@ class GameController extends Controller
 
     function show($id) {
         $game = Game::find($id);
-        return view('games.show', compact('game'));
+
+        $response = Http::get('http://api.steampowered.com/ISteamNews/GetNewsForApp/v0002/?appid=' . $game->steam_app_id . '&count=3&maxlength=300&format=json');
+        $newsItems = $response->json()['appnews']['newsitems'] ?? [];
+
+        return view('games.show', compact('game', 'newsItems'));
     }
 
     function create() {
