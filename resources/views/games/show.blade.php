@@ -3,6 +3,13 @@
 @section('content')
 
 <div class="container-fluid p-3">
+
+    @if ($message = session('success'))
+    <div class="alert alert-success">
+        {{ $message }}
+    </div>
+    @endif
+
     <div class="mb-3">
         <a href="{{ route('games.index') }}" class="btn btn-secondary">
             <i class="fa fa-arrow-left"></i> Back to Games
@@ -10,6 +17,15 @@
     </div>
 
     <h1 class="mb-4">Game {{ $game->id }}</h1>
+
+    <div class="mb-3">
+        <a href="{{ route('games.edit', $game->id) }}" class="btn btn-primary">
+            <i class="fa fa-edit"></i> Edit Game
+        </a>
+        <a href="{{ route('games.destroy', $game->id) }}" class="btn btn-danger ms-2 btn-delete">
+            <i class="fa fa-times"></i> Delete Game
+        </a>
+    </div>
 
     <div class="card" style="width: 100%;">
         <div class="card-body">
@@ -71,5 +87,7 @@
         @endforeach
     </div>
 </div>
+
+@include('games._delete')
 
 @endsection
