@@ -27,7 +27,7 @@
         </a>
     </div>
 
-    @include('machines._delete')
+    @include('shared._delete')
 
 </div>
 

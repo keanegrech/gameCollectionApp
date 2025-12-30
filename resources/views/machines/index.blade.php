@@ -49,7 +49,7 @@
             </tbody>
         </table>
 
-        @include('machines._delete')
+        @include('shared._delete')
 
     </div>
 </div>

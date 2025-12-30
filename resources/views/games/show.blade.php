@@ -112,6 +112,6 @@
     </div>
 </div>
 
-@include('games._delete')
+@include('shared._delete')
 
 @endsection
