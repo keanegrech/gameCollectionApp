@@ -15,7 +15,7 @@
 <body>
     <nav data-bs-theme="dark" class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ route('machines.index') }}">
+            <a class="navbar-brand" href="{{ route('root.index') }}">
                 <strong>
                     Game Collection
                 </strong>

@@ -18,7 +18,7 @@ use App\Http\Controllers\ScreenshotController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('root.index');
 
 /* -- Machine Routes -- */
 
