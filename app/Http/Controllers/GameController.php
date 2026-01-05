@@ -39,6 +39,13 @@ class GameController extends Controller
     }
 
     function store(Request $request) {
+        $response = Http::get('http://api.steampowered.com/ISteamNews/GetNewsForApp/v0002/?appid=' . $request->steam_app_id . '&count=1&maxlength=300&format=json');
+        $newsItems = $response->json()['appnews']['newsitems'] ?? [];
+
+        if (empty($newsItems)) {
+            return redirect()->back()->withErrors(['steam_app_id' => 'Please provide a valid Steam App ID.'])->withInput();
+        }
+
         $request->validate([
             'title' => 'required',
             'description' => 'required',
