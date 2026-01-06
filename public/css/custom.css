@@ -46,6 +46,24 @@ td {
 	box-shadow: 0 0 5px cyan;
 }
 
+select {
+	background-color: #333333;
+	color: white;
+	border: 1px solid #555555;
+	border-radius: 0.25rem;
+	padding: 0.375rem 0.75rem;
+	font-size: 1rem;
+}
+
+select:focus {
+	background-color: #333333;
+	color: white;
+	border-color: cyan;
+	box-shadow: 0 0 5px cyan;
+	outline: none;
+}
+
 hr {
 	border-top: 1px solid cyan;
 }
+

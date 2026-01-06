@@ -10,9 +10,24 @@ use Illuminate\Support\Facades\Http;
 
 class GameController extends Controller
 {
-    function index() {
-        $games = Game::all();
-        return view('games.index', compact('games'));
+    function index(Request $request) {
+        $query = Game::query();
+        
+        if ($request->has('machine_id') && $request->machine_id != '') {
+            $query->where('machine_id', $request->machine_id);
+        }
+
+        if($request->has('sort') && $request->sort != '') {
+            if ($request->sort === 'desc') {
+                $query->orderBy('release_date', 'desc');
+            } elseif ($request->sort === 'asc') {
+                $query->orderBy('release_date', 'asc');
+            }
+        }
+        
+        $games = $query->get();
+        $machines = Machine::orderBy('name')->get();
+        return view('games.index', compact('games', 'machines'));
     }
 
     function show($id) {

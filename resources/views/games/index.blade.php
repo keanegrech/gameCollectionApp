@@ -4,11 +4,29 @@
 <div class="container-fluid p-3">
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h1 class="m-0">Games</h1>
+        <form class="col" action="{{ route('games.index') }}" method="GET">
+            <select name="machine_id" class="form-select" aria-label="Filter by Machine">
+                <option value="">Filter by Machine</option>
+                @foreach ($machines as $machine)
+                <option value="{{ $machine->id }}" {{ request('machine_id')==$machine->id ? 'selected' : '' }}>
+                    {{ $machine->name }}</option>
+                @endforeach
+            </select>
+    
+            <select name="sort" class="form-select" aria-label="Sort by date released">
+                <option value="">Sort by Release Date</option>
+                <option value="asc" {{ request('sort')=='asc' ? 'selected' : '' }}>Oldest to Newest</option>
+                <option value="desc" {{ request('sort')=='desc' ? 'selected' : '' }}>Newest to Oldest</option>
+            </select>
+    
+            <input type="submit" class="btn btn-primary mt-2" value="Query">
+        </form>
         <a href="{{ route('games.create') }}" class="btn btn-success">
             <i class="fa fa-plus"></i> Add New Game
         </a>
     </div>
 
+    
     <div class="table-responsive">
 
         @if ($message = session('success'))
