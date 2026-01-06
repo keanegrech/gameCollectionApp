@@ -4,7 +4,7 @@
 <div class="container-fluid p-3">
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h1 class="m-0">Games</h1>
-        <form class="col" action="{{ route('games.index') }}" method="GET">
+        <form class="col d-flex align-items-center gap-2" action="{{ route('games.index') }}" method="GET">
             <select name="machine_id" class="form-select" aria-label="Filter by Machine">
                 <option value="">Filter by Machine</option>
                 @foreach ($machines as $machine)
@@ -19,7 +19,7 @@
                 <option value="desc" {{ request('sort')=='desc' ? 'selected' : '' }}>Newest to Oldest</option>
             </select>
     
-            <input type="submit" class="btn btn-primary mt-2" value="Query">
+            <input type="submit" class="btn btn-primary" value="Query">
         </form>
         <a href="{{ route('games.create') }}" class="btn btn-success">
             <i class="fa fa-plus"></i> Add New Game
