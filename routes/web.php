@@ -20,7 +20,9 @@ Route::get('/', function () {
     return view('welcome');
 })->name('root.index');
 
+//
 /* -- Machine Routes -- */
+//
 
 // View routes
 Route::get('/machines', [MachineController::class, 'index'])->name('machines.index');
@@ -33,7 +35,9 @@ Route::post('/machines', [MachineController::class, 'store'])->name('machines.st
 Route::put('/machines/{id}', [MachineController::class, 'update'])->name('machines.update');
 Route::delete('/machines/{id}', [MachineController::class, 'destroy'])->name('machines.destroy');
 
+//
 /* -- Game routes -- */
+//
 
 // View routes
 Route::get('/games', [GameController::class, 'index'])->name('games.index');
