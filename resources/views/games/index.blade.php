@@ -57,6 +57,14 @@
                         <strong>Percent Complete:</strong> {{ $game->percent_complete }}%
                     </p>
 
+                    <p class="card-text">
+                        <strong>Machine:</strong> {{ $game->machine->name }}
+                    </p>
+
+                    <p class="card-text">
+                        <strong>Release Date:</strong> {{ $game->release_date }}
+                    </p>
+
                     <a href={{ route('games.show', $game->id) }} class="btn btn-primary">
                         View Details
                     </a>
